@@ -1,0 +1,1575 @@
+# ####################################################################
+
+#  Created by Genus(TM) Synthesis Solution 22.12-s082_1 on Tue Apr 07 16:32:28 +07 2026
+
+# ####################################################################
+
+set sdc_version 2.0
+
+set_units -capacitance 1000fF
+set_units -time 1000ps
+
+# Set the current design
+current_design cpu_32bit_top
+
+create_clock -name "clk" -period 1.7 -waveform {0.0 0.85} [get_ports clk_pin]
+set_multicycle_path -through [list \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[0]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[0]}] ] -setup -end 1
+set_multicycle_path -through [list \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[32]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[0]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[32]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[0]}] ] -setup -end 4
+set_multicycle_path -through [list \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[31]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[30]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[29]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[28]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[27]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[26]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[25]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[24]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[23]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[22]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[21]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[20]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[19]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[18]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[17]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[16]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[15]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[14]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[13]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[12]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[11]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[10]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[9]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[8]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[7]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[6]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[5]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[4]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[3]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[2]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[1]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[0]}] ] -setup -end 6
+set_multicycle_path -through [list \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/sll_94_28/Z[0]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/srl_104_28/Z[0]}] ] -hold -start 0
+set_multicycle_path -through [list \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[32]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/sub_84_37/Z[0]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[32]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[31]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[30]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[29]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[28]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[27]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[26]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[25]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[24]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[23]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[22]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[21]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[20]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[19]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[18]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[17]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[16]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[15]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[14]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[13]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[12]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[11]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[10]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[9]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[8]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[7]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[6]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[5]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[4]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[3]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[2]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[1]}]  \
+  [get_pins {U_CORE/DP/ALU/mul_116_37/Z[0]}] ] -hold -start 3
+set_multicycle_path -through [list \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[31]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[30]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[29]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[28]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[27]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[26]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[25]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[24]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[23]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[22]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[21]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[20]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[19]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[18]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[17]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[16]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[15]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[14]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[13]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[12]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[11]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[10]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[9]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[8]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[7]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[6]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[5]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[4]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[3]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[2]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[1]}]  \
+  [get_pins {U_CORE/DP/ALU/div_128_37/QUOTIENT[0]}] ] -hold -start 5
+group_path -name cg_enable_group_clk -through [list \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/enable]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/enable]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/enable]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/ACC_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/IR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/MAR_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/enable]  \
+  [get_pins U_CORE/DP/MDR_reg/RC_CG_HIER_INST129/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/enable]  \
+  [get_pins U_CORE/DP/PC_reg/RC_CG_HIER_INST130/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/enable]  \
+  [get_pins U_CORE/FSM/RC_CG_HIER_INST128/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST0/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST1/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST2/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST3/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST4/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST5/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST6/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST7/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST8/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST9/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST10/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST11/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST12/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST13/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST14/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST15/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST16/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST17/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST18/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST19/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST20/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST21/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST22/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST23/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST24/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST25/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST26/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST27/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST28/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST29/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST30/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST31/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST32/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST33/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST34/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST35/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST36/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST37/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST38/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST39/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST40/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST41/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST42/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST43/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST44/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST45/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST46/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST47/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST48/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST49/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST50/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST51/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST52/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST53/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST54/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST55/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST56/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST57/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST58/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST59/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST60/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST61/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST62/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST63/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST64/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST65/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST66/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST67/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST68/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST69/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST70/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST71/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST72/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST73/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST74/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST75/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST76/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST77/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST78/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST79/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST80/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST81/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST82/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST83/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST84/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST85/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST86/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST87/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST88/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST89/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST90/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST91/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST92/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST93/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST94/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST95/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST96/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST97/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST98/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST99/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST100/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST101/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST102/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST103/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST104/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST105/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST106/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST107/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST108/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST109/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST110/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST111/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST112/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST113/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST114/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST115/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST116/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST117/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST118/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST119/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST120/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST121/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST122/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST123/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST124/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST125/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST126/RC_CGIC_INST/E]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/enable]  \
+  [get_pins U_CORE/ram_wrapper/u_ram128x16_soft/RC_CG_HIER_INST127/RC_CGIC_INST/E] ]
+set_clock_gating_check -setup 0.0 
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports rst_pin]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports start_pin]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[31]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[30]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[29]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[28]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[27]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[26]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[25]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[24]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[23]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[22]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[21]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[20]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[19]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[18]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[17]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[16]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[15]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[14]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[13]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[12]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[11]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[10]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[9]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[8]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[7]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[6]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[5]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[4]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[3]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[2]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[1]}]
+set_input_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {din_pin[0]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[31]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[30]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[29]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[28]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[27]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[26]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[25]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[24]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[23]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[22]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[21]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[20]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[19]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[18]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[17]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[16]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[15]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[14]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[13]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[12]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[11]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[10]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[9]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[8]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[7]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[6]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[5]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[4]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[3]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[2]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[1]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports {dout_pin[0]}]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports done_pin]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports err_pin]
+set_output_delay -clock [get_clocks clk] -add_delay 1.0 [get_ports unuse_pin]
+set_max_fanout 20.000 [current_design]
+set_dont_touch [get_cells U_IO/set_dont_touch_corner_ll]
+set_dont_touch [get_cells U_IO/set_dont_touch_corner_lr]
+set_dont_touch [get_cells U_IO/set_dont_touch_corner_ul]
+set_dont_touch [get_cells U_IO/set_dont_touch_corner_ur]
+set_dont_touch [get_cells U_IO/set_dont_touch_din00]
+set_dont_touch [get_cells U_IO/set_dont_touch_din01]
+set_dont_touch [get_cells U_IO/set_dont_touch_din02]
+set_dont_touch [get_cells U_IO/set_dont_touch_din03]
+set_dont_touch [get_cells U_IO/set_dont_touch_din04]
+set_dont_touch [get_cells U_IO/set_dont_touch_din05]
+set_dont_touch [get_cells U_IO/set_dont_touch_din06]
+set_dont_touch [get_cells U_IO/set_dont_touch_din07]
+set_dont_touch [get_cells U_IO/set_dont_touch_din08]
+set_dont_touch [get_cells U_IO/set_dont_touch_din09]
+set_dont_touch [get_cells U_IO/set_dont_touch_din10]
+set_dont_touch [get_cells U_IO/set_dont_touch_din11]
+set_dont_touch [get_cells U_IO/set_dont_touch_din12]
+set_dont_touch [get_cells U_IO/set_dont_touch_din13]
+set_dont_touch [get_cells U_IO/set_dont_touch_din14]
+set_dont_touch [get_cells U_IO/set_dont_touch_din15]
+set_dont_touch [get_cells U_IO/set_dont_touch_din16]
+set_dont_touch [get_cells U_IO/set_dont_touch_din17]
+set_dont_touch [get_cells U_IO/set_dont_touch_din18]
+set_dont_touch [get_cells U_IO/set_dont_touch_din19]
+set_dont_touch [get_cells U_IO/set_dont_touch_din20]
+set_dont_touch [get_cells U_IO/set_dont_touch_din21]
+set_dont_touch [get_cells U_IO/set_dont_touch_din22]
+set_dont_touch [get_cells U_IO/set_dont_touch_din23]
+set_dont_touch [get_cells U_IO/set_dont_touch_din24]
+set_dont_touch [get_cells U_IO/set_dont_touch_din25]
+set_dont_touch [get_cells U_IO/set_dont_touch_din26]
+set_dont_touch [get_cells U_IO/set_dont_touch_din27]
+set_dont_touch [get_cells U_IO/set_dont_touch_din28]
+set_dont_touch [get_cells U_IO/set_dont_touch_din29]
+set_dont_touch [get_cells U_IO/set_dont_touch_din30]
+set_dont_touch [get_cells U_IO/set_dont_touch_din31]
+set_dont_touch [get_cells U_IO/set_dont_touch_done]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout00]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout01]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout02]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout03]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout04]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout05]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout06]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout07]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout08]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout09]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout10]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout11]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout12]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout13]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout14]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout15]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout16]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout17]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout18]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout19]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout20]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout21]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout22]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout23]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout24]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout25]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout26]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout27]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout28]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout29]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout30]
+set_dont_touch [get_cells U_IO/set_dont_touch_dout31]
+set_dont_touch [get_cells U_IO/set_dont_touch_in_clk]
+set_dont_touch [get_cells U_IO/set_dont_touch_in_rst]
+set_dont_touch [get_cells U_IO/set_dont_touch_in_start]
+set_dont_touch [get_cells U_IO/set_dont_touch_out_err]
+set_dont_touch [get_cells U_IO/set_dont_touch_root_clk_buf]
+set_dont_touch [get_cells U_IO/set_dont_touch_spare]
+set_dont_touch [get_cells U_IO/set_dont_touch_vddCore_left]
+set_dont_touch [get_cells U_IO/set_dont_touch_vddCore_right]
+set_dont_touch [get_cells U_IO/set_dont_touch_vddIO_bottom]
+set_dont_touch [get_cells U_IO/set_dont_touch_vddIO_top]
+set_dont_touch [get_cells U_IO/set_dont_touch_vssCore_left]
+set_dont_touch [get_cells U_IO/set_dont_touch_vssCore_right]
+set_dont_touch [get_cells U_IO/set_dont_touch_vssIO_bottom]
+set_dont_touch [get_cells U_IO/set_dont_touch_vssIO_top]
+set_clock_latency  1.0 [get_clocks clk]
+set_clock_uncertainty -setup 0.1 [get_clocks clk]
+set_clock_uncertainty -hold 0.05 [get_clocks clk]
